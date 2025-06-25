@@ -2,7 +2,7 @@ name: simple worflow using checkout
 
 on:
   push: 
-    branches: master
+   branches: master
 
 jobs: 
   main: 
@@ -17,4 +17,3 @@ jobs:
         run: ./start.sh
       - name: example
         run: ./example.sh
-
