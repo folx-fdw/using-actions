@@ -1,7 +1,7 @@
 name: simple worflow using checkout 
 
 on:
-  push
+  push: master
 
 jobs: 
   main: 
