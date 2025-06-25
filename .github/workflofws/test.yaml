@@ -1,5 +1,8 @@
 name: simple worflow using checkout 
 
+on:
+  push
+
 jobs: 
   main: 
     runs-on: ubuntu-latest
