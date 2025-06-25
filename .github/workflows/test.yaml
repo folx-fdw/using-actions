@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run: 
-        work-directory: ./scripts
+        working-directory: ./scripts
     steps:
       - name: checkout the repo
         uses: actions/checkout@v4
