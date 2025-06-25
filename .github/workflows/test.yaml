@@ -1,15 +1,11 @@
 name: simple worflow using checkout 
 
 on:
-  push:
-    branches: master
+  push
 
 jobs: 
   main: 
     runs-on: ubuntu-latest
-    defaults:
-      run: 
-        working-directory: ./scripts
     steps:
       - name: checkout the repo
         uses: actions/checkout@v4
