@@ -1,0 +1,14 @@
+name: simple worflow using checkout 
+
+jobs: 
+  main: 
+    runs-on: ubuntu-latest
+    work-directory: ./scripts
+    steps:
+      - name: checkout the repo
+        usese: actions/checkout@v4
+      - name: start
+        run: ./start.sh
+      - name: example
+        run: ./example.sh
+
