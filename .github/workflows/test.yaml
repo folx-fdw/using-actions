@@ -10,8 +10,7 @@ jobs:
       - name: checkout the repo
         uses: actions/checkout@v4
       - name: greet user
-        run: echo $GREETING
-        env: ${{ vars.GREETING }}
+        run: echo ${{ vars.GREETING }}
       - name: start
         run: $command
         env: 
