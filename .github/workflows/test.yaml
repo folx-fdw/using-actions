@@ -7,6 +7,10 @@ jobs:
   main: 
     runs-on: ubuntu-latest
     steps:
+      - name: export
+        run: export TEST="testing var"
+      - name: using export
+        run: echo $TEST
       - name: checkout the repo
         uses: actions/checkout@v4
       - name: greet user
