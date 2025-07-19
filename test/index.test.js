@@ -1,4 +1,4 @@
-import { main } from './index.js';
+import { main } from '../index.js';
 
 describe('Test', () => {
     test('test', () => {
