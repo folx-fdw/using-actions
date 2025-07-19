@@ -17,8 +17,9 @@ jobs:
             - run: npm run format
             - run: npm run lint
             - run: touch result.json
-            - name: Jest Reporter
-              uses: soomo/jest-check@0.0.5
-              with: 
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                JEST_FOLDER: ${{ github.workspace }}/test
+            - run: npm test
+            - name: Eslint check
+              uses: krizzu/eslint-check-action@v1.1.0
+              with:
+                  ghToken: ${{ secrets.GITHUB_TOKE }}
+                  eslintConfig: eslint.config.js
