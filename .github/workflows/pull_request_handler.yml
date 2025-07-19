@@ -16,4 +16,7 @@ jobs:
             - run: npm ci
             - run: npm run format
             - run: npm run lint
-            - run: npm test
+            - name: Jest Reporter
+              uses: tanmen/jest-reporter@1
+              with: 
+                gtihub-token: ${{ secrets.GITHUB_TOKEN }}
