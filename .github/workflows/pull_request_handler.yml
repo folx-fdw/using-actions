@@ -19,4 +19,4 @@ jobs:
             - name: Jest Reporter
               uses: tanmen/jest-reporter@v1
               with: 
-                gtihub-token: ${{ secrets.GITHUB_TOKEN }}
+                github-token: ${{ secrets.GITHUB_TOKEN }}
