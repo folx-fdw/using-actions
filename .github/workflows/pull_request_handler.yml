@@ -18,6 +18,7 @@ jobs:
             - run: npm run lint
             - run: touch result.json
             - name: Jest Reporter
-              uses: tanmen/jest-reporter@v1
+              uses: soomo/jest-check@0.0.5
               with: 
-                github-token: ${{ secrets.GITHUB_TOKEN }}
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                JEST_FOLDER: ${{ github.workspace }}/test
