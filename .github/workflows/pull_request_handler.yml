@@ -1,26 +1,24 @@
 name: Node.js CI
 
-on:
-  pull_request:
-    branches: [ "feature/**", "fix/**", "hotfix/**", "refactor/**" ]
+on: pull_request
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
+    test:
+        runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x, 22.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-    steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: "22.x"
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run format
-    - run: npm run lint
-    - run: npm test
+        steps:
+            - uses: actions/checkout@v4
+            - name: Use Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22.x'
+                  cache: 'npm'
+            - run: npm ci
+            - run: npm run format
+            - run: npm run lint
+            - run: touch result.json
+            - name: Jest Reporter
+              uses: soomo/jest-check@0.0.5
+              with: 
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                JEST_FOLDER: ${{ github.workspace }}/test
