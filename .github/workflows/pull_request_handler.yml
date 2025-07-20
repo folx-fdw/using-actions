@@ -24,13 +24,16 @@ jobs:
             - run: npm run lint
             - run: touch result.json
             - run: npm run test-ci
-            - name: Publish test report
-              uses: dorny/test-reporter@v1.9.1
-              if: ${{ !cancelled() }}
+            - name: Publish Test Report
+              uses: dorny/test-reporter@v1
+              if: success() || failure()
               with:
-                  name: Testing Results
-                  path: ./junit.xml
+                  name: Jest Test Results
+                  path: test-results/junit.xml
                   reporter: jest-junit
+                  fail-on-error: true
                   list-suites: 'all'
                   list-tests: 'all'
                   max-annotations: 10
+                  output-annotations: 'true'
+                  comment-mode: always
