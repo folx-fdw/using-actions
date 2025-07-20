@@ -30,3 +30,7 @@ jobs:
                   name: Testing Results
                   path: ./junit.xml
                   reporter: jest-junit
+                  list-suites: 'all'
+                  list-tests: 'all'
+                  max-annotations: 10
+                  output-annotations: 'true'
