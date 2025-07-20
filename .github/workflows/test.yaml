@@ -1,27 +1,26 @@
-name: simple worflow using checkout 
+name: simple worflow using checkout
 
-on:
-  push
+on: push
 
-jobs: 
-  main: 
-    runs-on: ubuntu-latest
-    steps:
-      - name: export
-        run: export TEST="testing var"
-      - name: using export
-        run: echo $TEST
-      - name: checkout the repo
-        uses: actions/checkout@v4
-      - name: greet user
-        run: echo ${{ vars.GREETING }}
-      - name: start
-        run: $command
-        env: 
-          command: ./start.sh
-      - name: example
-        run: $command
-        env: 
-          command: ./example.sh
-      - name: list env's
-        run: env
+jobs:
+    main:
+        runs-on: ubuntu-latest
+        steps:
+            - name: export
+              run: export TEST="testing var"
+            - name: using export
+              run: echo $TEST
+            - name: checkout the repo
+              uses: actions/checkout@v4
+            - name: greet user
+              run: echo ${{ vars.GREETING }}
+            - name: start
+              run: $command
+              env:
+                  command: ./start.sh
+            - name: example
+              run: $command
+              env:
+                  command: ./example.sh
+            - name: list env's
+              run: env
