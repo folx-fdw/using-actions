@@ -33,4 +33,3 @@ jobs:
                   list-suites: 'all'
                   list-tests: 'all'
                   max-annotations: 10
-                  output-annotations: 'true'
