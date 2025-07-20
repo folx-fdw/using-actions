@@ -18,8 +18,3 @@ jobs:
             - run: npm run lint
             - run: touch result.json
             - run: npm test
-            - name: Eslint check
-              uses: krizzu/eslint-check-action@v1.1.0
-              with:
-                  ghToken: ${{ secrets.GITHUB_TOKE }}
-                  eslintConfig: eslint.config.js
