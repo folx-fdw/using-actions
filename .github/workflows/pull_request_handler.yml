@@ -17,4 +17,11 @@ jobs:
             - run: npm run format
             - run: npm run lint
             - run: touch result.json
-            - run: npm test
+            - run: npm run test-ci
+            - name: Publish test report
+              uses: dorny/test-reporter@v1.9.1
+              if: ${{ !cancelled() }}
+              with:
+                  name: Testing Results
+                  path: ./junit.xml
+                  reporter: jest-junit
