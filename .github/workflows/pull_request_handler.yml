@@ -29,7 +29,7 @@ jobs:
               if: success() || failure()
               with:
                   name: Jest Test Results
-                  path: test-results/junit.xml
+                  path: junit.xml
                   reporter: jest-junit
                   fail-on-error: true
                   list-suites: 'all'
